@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FloraHub - Your Plant Paradise</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-brand">
+            <h1>FloraHub</h1>
+        </div>
+        <div class="nav-links">
+            <a href="#" class="active">Home</a>
+            <a href="#">Shop</a>
+            <a href="#">About Us</a>
+            <a href="#">Contact Us</a>
+            <a href="#">Feedback</a>
+        </div>
+        <div class="nav-actions">
+            <div class="profile-dropdown">
+                <button class="profile-btn">
+                    <i class="fas fa-user"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="#"><i class="fas fa-user-circle"></i> Profile</a>
+                    <a href="#"><i class="fas fa-shopping-bag"></i> My Orders</a>
+                    <a href="#"><i class="fas fa-heart"></i> Wishlist</a>
+                    <a href="#"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                </div>
+            </div>
+            <button class="cart-btn" id="cartBtn">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">0</span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Cart Sidebar -->
+    <div class="cart-container" id="cartContainer">
+        <div class="cart-header">
+            <h2>Your Cart</h2>
+            <button class="close-cart" id="closeCart">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="cart-items" id="cartItems">
+            <!-- Cart items will be dynamically added here -->
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotal">$0.00</span>
+            </div>
+            <button class="checkout-btn">Proceed to Checkout</button>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>"Bring the beauty of nature into your home"</h2>
+            <div class="search-container">
+                <input type="text" id="searchInput" placeholder="Search for plants...">
+                <button class="search-btn">
+                    <i class="fas fa-search"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Sorting and Filtering -->
+        <div class="filters">
+            <select id="categorySelect" class="category-select">
+                <option value="all">All Categories</option>
+                <option value="plants">Plants</option>
+                <option value="accessories">Accessories</option>
+                <option value="decorations">Decorations</option>
+            </select>
+            <select id="sortSelect" class="sort-select">
+                <option value="">Sort By</option>
+                <option value="price-high">Price: High to Low</option>
+                <option value="price-low">Price: Low to High</option>
+                <option value="name">Alphabetical (A-Z)</option>
+            </select>
+        </div>
+
+        <!-- Product Grid -->
+        <section class="products-grid" id="productsGrid">
+            <!-- Products will be dynamically added here -->
+        </section>
+        <div id="noResults" class="no-results" style="display: none;">
+            <h3>No results found</h3>
+            <p>Try adjusting your search or category filter</p>
+        </div>
+
+        <!-- Exclusive Prebook Section -->
+        <section class="prebook-section">
+            <div class="prebook-header">
+                <h2>Exclusive Prebook</h2>
+                <p>Reserve these unique plants before they're gone!</p>
+            </div>
+            <div class="prebook-grid" id="prebookGrid">
+                <!-- Prebook products will be dynamically added here -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+
+    <script src="script.js"></script>
+</body>
+</html>
