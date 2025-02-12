@@ -4,18 +4,18 @@ const products = [
     {
         id: 1,
         name: "Peace Lily",
-        price: 29.99,
-        rating: 4.5,
-        image: "https://images.unsplash.com/photo-1593691509543-c55fb32e7355?auto=format&fit=crop&w=500",
+        price: 1450,
+        rating: 0,
+        image: "peace_lilly.jpg",
         category: "plants",
         isPrebook: false
     },
     {
         id: 2,
         name: "Snake Plant",
-        price: 24.99,
-        rating: 4.8,
-        image: "https://images.unsplash.com/photo-1572686972126-7b50a2012ab3?auto=format&fit=crop&w=500",
+        price: 1300,
+        rating: 0,
+        image: "snake_plant.webp",
         category: "plants",
         isPrebook: false
     },
@@ -23,18 +23,18 @@ const products = [
     {
         id: 3,
         name: "Ceramic Plant Pot",
-        price: 19.99,
-        rating: 4.3,
+        price: 275,
+        rating: 0,
         image: "https://images.unsplash.com/photo-1485955900006-10f4d324d411?auto=format&fit=crop&w=500",
         category: "accessories",
         isPrebook: false
     },
     {
         id: 4,
-        name: "Watering Can",
-        price: 15.99,
-        rating: 4.6,
-        image: "https://images.unsplash.com/photo-1602479185069-cf2cfc4c463f?auto=format&fit=crop&w=500",
+        name: "Succulent Garden",
+        price: 1200,
+        rating: 0,
+        image: "https://images.pexels.com/photos/3076899/pexels-photo-3076899.jpeg",
         category: "accessories",
         isPrebook: false
     },
@@ -42,17 +42,17 @@ const products = [
     {
         id: 5,
         name: "Hanging Planter",
-        price: 34.99,
-        rating: 4.7,
-        image: "https://images.unsplash.com/photo-1602079882360-689c8722c988?auto=format&fit=crop&w=500",
+        price: 2300,
+        rating: 0,
+        image: "hanging_planter.webp",
         category: "decorations",
         isPrebook: false
     },
     {
         id: 6,
         name: "Plant Stand",
-        price: 45.99,
-        rating: 4.4,
+        price: 3500,
+        rating: 0,
         image: "https://images.unsplash.com/photo-1597072689227-8882273e8f6a?auto=format&fit=crop&w=500",
         category: "decorations",
         isPrebook: false
@@ -61,18 +61,18 @@ const products = [
     {
         id: 7,
         name: "Rare Monstera Deliciosa",
-        price: 149.99,
-        rating: 4.9,
-        image: "https://images.unsplash.com/photo-1614594075929-b3113b08fa8f?auto=format&fit=crop&w=500",
+        price: 4250,
+        rating: 0,
+        image: "monstera_thai_constellation.jpg",
         category: "plants",
         isPrebook: true
     },
     {
         id: 8,
         name: "Limited Edition Plant Stand",
-        price: 89.99,
-        rating: 4.8,
-        image: "https://images.unsplash.com/photo-1597072689342-701767543442?auto=format&fit=crop&w=500",
+        price: 7300,
+        rating: 0,
+        image: "plant_santa.jpg",
         category: "decorations",
         isPrebook: true
     }
@@ -81,6 +81,12 @@ const products = [
 // Cart state
 let cart = [];
 let filteredProducts = [...products];
+
+const profile = document.querySelector(".profile-dropdown");
+const dropdown_content = document.querySelector(".dropdown-content");
+profile.addEventListener("click",()=>{
+    dropdown_content.classList.toggle("dropdown-active")
+})
 
 // DOM Elements
 const cartBtn = document.getElementById('cartBtn');
@@ -156,7 +162,7 @@ function createProductCard(product) {
                 ${createStarRating(product.rating)}
             </div>
             <div class="product-category">${product.category}</div>
-            <div class="product-price">$${product.price.toFixed(2)}</div>
+            <div class="product-price">₹${product.price.toFixed(2)}</div>
             <button class="add-to-cart" onclick="addToCart(${product.id})">
                 ${product.isPrebook ? 'Pre-order Now' : 'Add to Cart'}
             </button>

@@ -91,7 +91,7 @@ body {
     z-index: 1000;
 }
 
-.profile-dropdown:hover .dropdown-content {
+.dropdown-active{
     display: block;
 }
 
